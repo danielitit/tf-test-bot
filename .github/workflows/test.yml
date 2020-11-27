@@ -1,0 +1,19 @@
+name: Test
+on:
+  repository_dispatch:
+    types: [revert_last_staging_commit]
+
+jobs:
+  revert_pr:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: List all files
+      run: |
+        ls -la
+  
+    - name: Revert PR
+      run: |
+        bash scripts/my_script.sh
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
