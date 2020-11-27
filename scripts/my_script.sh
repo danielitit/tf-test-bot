@@ -27,8 +27,8 @@ API_RESPONSE=$(curl -X GET -s -H "${AUTH_HEADER}" -H "${API_HEADER}" \
 MERGE_COMMIT=$(echo "$API_RESPONSE" | jq -r .sha)
 
 REPO_URL=https://x-access-token:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git
-git config --global user.email "s.zawko@gmail.com"
-git config --global user.name "se2a"
+git config --global user.email "danielitit@gmail.com"
+git config --global user.name "danielitit"
 
 set -o xtrace
 
